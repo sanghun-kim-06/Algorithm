@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Ex2501 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n = scan.nextInt();
+		int k = scan.nextInt();
+		int dis = 0, cnt = 0;
+		
+		for(int i = 1; i <= n; i++) {
+			if(n % i == 0) {
+				cnt++;
+			}
+			
+			if(cnt == k) {
+				dis = i;
+				break;
+			}
+		}
+		
+		System.out.println(dis);
+
+	}
+
+}
