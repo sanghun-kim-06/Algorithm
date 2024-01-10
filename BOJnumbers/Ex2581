@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Ex2581 {
+	static boolean isPrime(int i) {
+		if(i == 0 || i == 1) {
+			return false;
+		}
+		
+		if(i == 2) {
+			return true;
+		}
+		
+		for(int j = 2; j <= (i / 2); j++) {
+			if(i % j == 0) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new  Scanner(System.in);
+		int m = scan.nextInt();
+		int n = scan.nextInt();
+		int min = 10001, sum = 0;
+		
+		for(int i = m; i <= n; i++) {
+			if(isPrime(i)) {
+				sum += i;
+				if(min > i) {
+					min = i;
+				}
+			}
+		}
+		
+		if(sum == 0 && min == 10001) {
+			System.out.println(-1);
+		}else {
+			System.out.println(sum);
+			System.out.println(min);
+		}
+	}
+
+}
