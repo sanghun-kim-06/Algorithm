@@ -1,0 +1,60 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+//import java.util.Scanner;
+
+public class Ex11653 {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		int i = 2;
+		
+		while(n != 1) {
+			if(n % i == 0) {
+				System.out.println(i);
+				n /= i;
+			}else {
+				i++;
+			}
+		}
+		
+	}
+}
+	
+//처음에 풀었던거. 시간초과 뜸ㅠ
+//	static boolean isPrime(int i) {
+//		if(i == 0 || i == 1) {
+//			return false;
+//		}
+//		
+//		if(i == 2) {
+//			return true;
+//		}
+//		
+//		for(int j = 2; j <= (i / 2); j++) {
+//			if(i % j == 0) {
+//				return false;
+//			}
+//		}
+//		
+//		return true;
+//	}
+//	
+//	public static void main(String[] args) {
+//		Scanner scan = new Scanner(System.in);
+//		int n = scan.nextInt();
+//		int sum = 0;
+//		
+//		while(n >= sum) {
+//			for(int i = 2; i <= n; i++) {
+//				if(isPrime(i) && n % i == 0) {
+//					sum *= i;
+//					n = n / i;
+//					System.out.println(i);
+//					break;
+//				}
+//			}
+//		}
+//
+//	}
