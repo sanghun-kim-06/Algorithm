@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Ex1978 {
+
+	public static void main(String[] args) {
+		Scanner scan = new  Scanner(System.in);
+		int n = scan.nextInt();
+		int cnt = 0;
+		
+		for(int i = 0; i < n; i++) {
+			boolean notPrime = false;
+			int pri = scan.nextInt();
+			
+			if(pri == 1 || pri == 0) {
+				continue;
+			}
+			
+			if(pri == 2) {
+				cnt++;
+				continue;
+			}
+			
+			for(int j = 2; j <= (pri / 2); j++) {
+				if(pri % j == 0) {
+					notPrime = true;
+					break;
+				}
+			}
+			
+			if(notPrime) {
+				continue;
+			}
+			
+			cnt++;
+		}
+		
+		System.out.println(cnt);
+
+	}
+
+}
